@@ -11,12 +11,19 @@ public class TaskItem
     int taskId;
     int consumption;
 
-    public TaskItem(int taskId, int consumption)
+    public TaskItem(int nodeId,int taskId, int consumption)
     {
-        this.nodeId = -1;
+        this.nodeId = nodeId;
         this.taskId = taskId;
         this.consumption = consumption;
     }
+
+    public TaskItem(int taskId, int consumption)
+    {
+        this.taskId = taskId;
+        this.consumption = consumption;
+    }
+
 
     public int getNodeId()
     {
