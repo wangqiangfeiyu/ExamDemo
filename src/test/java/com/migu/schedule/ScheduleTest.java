@@ -1,13 +1,12 @@
 package com.migu.schedule;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.migu.schedule.constants.ReturnCodeKeys;
+import com.migu.schedule.info.TaskInfo;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.migu.schedule.constants.ReturnCodeKeys;
-import com.migu.schedule.info.TaskInfo;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ScheduleTest
     {
@@ -72,7 +71,8 @@ public class ScheduleTest
         actual = schedule.unregisterNode(1);
         Assert.assertEquals(ReturnCodeKeys.E006, actual);
     }
-    
+
+
     @Test
     public void testUnregisterNode2()
     {
