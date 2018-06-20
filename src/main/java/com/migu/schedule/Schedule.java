@@ -13,8 +13,6 @@ public class Schedule {
 
     // 节点
     private List<Integer> nodes = new ArrayList<Integer>();
-    // 任务id
-    private List<Integer> tasks = new ArrayList<Integer>();
     // 任务信息
     private Map<Integer,TaskItem> tasksMap = new HashMap<Integer,TaskItem>();
     // 挂起队列
@@ -23,7 +21,6 @@ public class Schedule {
     public int init()
     {
         nodes.clear();
-        tasks.clear();
         tasksMap.clear();
         pending.clear();
         return ReturnCodeKeys.E001;
@@ -118,7 +115,6 @@ public class Schedule {
         {
             if (tasksMap.containsKey(taskId))
             {
-                tasks.remove(new Integer(taskId));
                 tasksMap.remove(taskId);
                 pending.remove(taskId);
                 return ReturnCodeKeys.E011;
@@ -139,14 +135,14 @@ public class Schedule {
 
     public int scheduleTask(int threshold) {
 
-        if (tasks.isEmpty())
+        if (tasksMap.isEmpty())
         {
             return ReturnCodeKeys.E014;
         }
 
         if (threshold > 0 && !nodes.isEmpty())
         {
-            if (tasks.isEmpty())
+            if (tasksMap.isEmpty())
             {
                 return ReturnCodeKeys.E013;
             }
