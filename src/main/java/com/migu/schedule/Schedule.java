@@ -142,7 +142,7 @@ public class Schedule {
 
         if (threshold > 0 && !nodes.isEmpty())
         {
-            if (tasksMap.isEmpty())
+            if (!tasksMap.isEmpty())
             {
                 return ReturnCodeKeys.E013;
             }
