@@ -1,6 +1,8 @@
 package com.migu.schedule.constants;
 public final class ReturnCodeKeys {
+    //方法未实现
     public static final int E000 = 0;
+    // 初始化成功
     public static final int E001 = 1;
     public static final int E002 = 2;
     public static final int E003 = 3;
