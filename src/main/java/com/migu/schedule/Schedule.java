@@ -138,6 +138,19 @@ public class Schedule {
 
 
     public int scheduleTask(int threshold) {
+
+        if (tasks.isEmpty())
+        {
+            return ReturnCodeKeys.E014;
+        }
+
+        if (threshold > 0 && !nodes.isEmpty())
+        {
+            if (tasks.isEmpty())
+            {
+                return ReturnCodeKeys.E013;
+            }
+        }
         return ReturnCodeKeys.E014;
     }
 
